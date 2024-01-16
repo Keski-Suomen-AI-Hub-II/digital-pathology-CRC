@@ -13,7 +13,7 @@ Taustaa suomeksi.
 
 ## Konvoluutioneuroverkkomallit
 
---Tähän TUM5x, TUM20, OTHER5x, multi-scale -malleista jotain ---
+Kaikkien mallien arkkitehtuuri pohjautuu MobileNetV3Tähän TUM5x, TUM20, OTHER5x, multi-scale -malleista jotain ---
 
 - **TUM5x.pt**: 
     - MobileNetV3Large-arkkitehtuuri
@@ -28,6 +28,9 @@ Taustaa suomeksi.
 - **OTHER5x.pt**: 
 
 - **Multi-scale.pt**:
+
+![image](https://github.com/Keski-Suomen-AI-Hub-II/digital-pathology-CRC/assets/64031196/eb8313b8-8c77-48c1-96be-d9171567ca01)
+
 
 Luokat:
 
