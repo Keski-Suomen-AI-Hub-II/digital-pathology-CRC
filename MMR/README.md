@@ -12,4 +12,6 @@ All data for training and testing have to be tiled from a magnification of 20x a
 
 - Torch 2.1.0
 - Torchvision 0.16.0
+- OpenSlide 1.1.2
+- OpenCV 4.5.2
 - CUDA 12.3
