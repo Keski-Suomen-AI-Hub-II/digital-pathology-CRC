@@ -2,7 +2,7 @@
 
 All data for training and testing have to be tiled from a magnification of 20x and stain-normalized with Macenko's method.
 
-## Pred dMMR/pMMR
+## Predict dMMR
 
 1. Create TUMOR mask (mask_TUM20x.py)
 2. Tile WSIs from magnifications of 5x and 20x using the same center point (tile5x20x.py)
