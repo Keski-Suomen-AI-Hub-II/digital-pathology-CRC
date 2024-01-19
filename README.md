@@ -2,32 +2,35 @@
 
 ## Sisältö / In this repository:
 
-- ***models***: ladattavat konvoluutioneuroverkkomallit / CNN-models for downloading
+- ***MMR/***: ladattavat konvoluutioneuroverkkomallit ja python-tiedostot WSI-kuvien esikäsittelyä ja dMMR:n ennustamista varten / CNN-models for downloading and python-files for preprocessing of the WSI-files and dMMR prediction.
 - ***readme.md***: ohjeet ja taustatiedot / instructions and background, english version follows the finnish one
-- ***.py***: ...
 
 ---
 
 ## dMMR / MSI
-Taustaa suomeksi.
+
+Molekyylitason profilointi on keskeinen osa useiden syöpätyyppien, kuten myös suolistosyövän (CRC) diagnostiikkaa.  tapauksissa. Yksi tärkeä geneettinen ominaisuus, joka CRC potilaiden kohdalla selvitetään, on DNA:n korjausmekanismin toimivuus (DNA mismatch repair, MMR). MMR-mekanismin viallisuus (MMR-deficient, dMMR) johtaa lyhyiden ei-koodaavien DNA-jaksojen eli mikrosatelliittijaksojen epästabiiliuteen (microsatellite unstable, MSI).  Syöpien, joilla todetaan MSI, on havaittu olevan muita immunogeenisempia ja omaavan hyvän vasteen immunologisille syöpälääkkeille, ja MSI-syövät eivät puolestaan välttämättä hyödy muille syöville kohdennetuista fluorourasiiliin pohjautuvista sytostaattihoidoista. CRC potilaiden kohdalla MSI on tärkeä selvittää myös sen vuoksi, että se voi olla merkki Lynchin oireyhtymästä (LS), joka on yleisin perinnöllinen CRC-tyyppi.
+
+Vaikka MSI:n selvittäminen on potilaan hoidon kannalta kiistattoman tärkeää, kustannussyistä se voi jäädä selvittämättä, sillä perinteisillä menetelmillä se vaatii niin henkilö- kuin materiaaliresursseja. Tästä kirjastosta löytyy neljä erilaista mallia dMMR:n ennustamiseen suolistosyövän histopatologisista kuvista. Mallit on opetettu, validoitu ja testattu käyttäen "Suolistyöpä Keski-Suomessa 2000-2015" H&E värjättyjä histopatologisia WSI-kuvia sekä Lynch-oireyhtymä potilailta kerätyistä näytteistä skannattuja H&E värjättyjä WSI-kuvia.
 
 ## Konvoluutioneuroverkkomallit
 
-Kaikkien mallien arkkitehtuuri pohjautuu MobileNetV3Tähän TUM5x, TUM20, OTHER5x, multi-scale -malleista jotain ---
+Kaikkien mallit pohjautuvat MobileNetV3-arkkitehtuuriin, joka on esiopetettu ImageNet-kuvakirjastolla. Mallit ovat yksi- (TUM5x, TUM20x, OTHER5x) tai kaksihaaraisia (TUM5x-TUM20x). Kasvainalueiden tunnistamiseen on käytetty Ai Hub I-hankkeessa kehitettyä kasvain-strooma-mallia (MMR/models/TSR_model.pt). Kasvainsolukon maski tehdään 20x suurennoksesta.
 
 - **TUM5x.pt**: 
-    - MobileNetV3Large-arkkitehtuuri
-    - esiopetus: ImageNet
-    - WSI-kuvat (H%E-värjäys) suolistosyövästä ("Suolisyöpä Keski-Suomessa 2000-2015", sekä Lynchin oireyhtymätapaukset)
-    - 5x suurennos kasvainsolukosta
-        - kasvainalueiden tunnistamiseen käytetty AI Hub I -hankkeessa kehitettyä mallia --> linkki
-    - WSI-kohtainen tarkkuus: AUC = 93,4 %
+    - tiilikohtainen luokittelutarkkuus 82,2 %
+    - WSI-kohtainen luokittelutarkkuus: **AUC = 93,4 %**
     
 - **TUM20x.pt**:
+    - tiilikohtainen luokittelutarkkuus 78,6 %
+    - WSI-kohtainen luokittelutarkkuus **AUC = 92,0 %**
     
 - **OTHER5x.pt**: 
+    - tiilikohtainen luokittelutarkkuus -
+    - WSI-kohtainen luokittelutarkkuus **AUC = 83,0 %**
 
 - **Multi-scale.pt**:
+    - WSI-kohtainen luokittelutarkkuus **AUC = 93.0 %**
 
 ![image](https://github.com/Keski-Suomen-AI-Hub-II/digital-pathology-CRC/assets/64031196/eb8313b8-8c77-48c1-96be-d9171567ca01)
 
