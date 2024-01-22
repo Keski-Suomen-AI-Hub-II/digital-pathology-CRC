@@ -85,7 +85,7 @@ Classes:
 
 - **0**: dMMR
 - **1**: pMMR
-- 
+
 
 ### Input images
 
@@ -97,3 +97,6 @@ Classes:
 - as the models are pre-trained with ImageNet, the image tiles are normalized before training using the following means and standard deviations:
     - means = [0.485, 0.456, 0.406]
     - standard deviations = [0.229, 0.224, 0.225]
+ 
+
+![image](https://github.com/Keski-Suomen-AI-Hub-II/digital-pathology-CRC/assets/64031196/cae1901e-e4ac-41a3-b9b5-ed439bc7faa9)
