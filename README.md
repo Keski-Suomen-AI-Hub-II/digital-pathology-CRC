@@ -3,7 +3,7 @@
 ## Sisältö / In this repository:
 
 - ***MMR/***: ladattavat konvoluutioneuroverkkomallit ja python-tiedostot WSI-kuvien esikäsittelyä ja dMMR:n ennustamista varten / CNN-models for downloading and python-files for preprocessing of the WSI-files and dMMR prediction.
-- ***readme.md***: ohjeet ja taustatiedot / instructions and background, english version follows the finnish one
+- ***readme.md***: ohjeet ja taustatiedot / instructions and background, ***english version follows the finnish one***
 
 ---
 
