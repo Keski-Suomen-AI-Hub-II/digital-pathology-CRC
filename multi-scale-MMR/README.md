@@ -13,24 +13,17 @@ Molekyylitason profilointi on keskeinen osa useiden syöpätyyppien, kuten myös
 
 Vaikka MSI:n selvittäminen on potilaan hoidon kannalta kiistattoman tärkeää, kustannussyistä se voi jäädä selvittämättä, sillä perinteisillä menetelmillä se vaatii niin henkilö- kuin materiaaliresursseja. Tästä kirjastosta löytyy neljä erilaista mallia dMMR:n ennustamiseen suolistosyövän histopatologisista kuvista. Mallit on opetettu, validoitu ja testattu käyttäen "Suolistyöpä Keski-Suomessa 2000-2015" H&E värjättyjä histopatologisia WSI-kuvia sekä Lynch-oireyhtymä potilailta kerätyistä näytteistä skannattuja H&E värjättyjä WSI-kuvia.
 
-## Konvoluutioneuroverkkomallit
+## Malli
 
-Kaikkien mallit pohjautuvat MobileNetV3-arkkitehtuuriin, joka on esiopetettu ImageNet-kuvakirjastolla. Mallit ovat yksi- (TUM5x, TUM20x, OTHER5x) tai kaksihaaraisia (TUM5x-TUM20x). Kasvainalueiden tunnistamiseen on käytetty Ai Hub I-hankkeessa kehitettyä kasvain-strooma-mallia (MMR/models/TSR_model.pt). Kasvainsolukon maski tehdään 20x suurennoksesta.
+Malli koostuu sekä CNN- että XGBoost-kerroksista, arkkitehtuuri on esitetty alla olevasssa kuvassa. CNN-haarat perustuvat MobileNetV3-arkkitehtuuriin, joka on esiopetettu ImageNet-kuvakirjastolla ja mallit on opetettu käyttäen kuvien alueita, joissa esiintyy kasvainsolukkoa. Kasvainalueiden tunnistamiseen on käytetty AI Hub I-hankkeessa kehitettyä kasvain-strooma-mallia (MMR/models/TSR_model.pt). Kasvainsolukon maski tehdään 20x suurennoksesta.
 
-- **TUM5x.pt**: 
-    - tiilikohtainen luokittelutarkkuus 82,2 %
-    - WSI-kohtainen luokittelutarkkuus: **AUC = 93,4 %**
-    
-- **TUM20x.pt**:
-    - tiilikohtainen luokittelutarkkuus 78,6 %
-    - WSI-kohtainen luokittelutarkkuus **AUC = 92,0 %**
-    
-- **OTHER5x.pt**: 
-    - tiilikohtainen luokittelutarkkuus -
-    - WSI-kohtainen luokittelutarkkuus **AUC = 83,0 %**
+<img width="1500" alt="graphicalabstract" src="https://github.com/user-attachments/assets/44e45f67-f87f-460e-bc63-e0affd74fd40" />
 
-- **Multi-scale.pt**:
-    - WSI-kohtainen luokittelutarkkuus **AUC = 93.0 %**
+- **TUM5x.pt**
+- **TUM20x.pt**
+
+- **Multi-scale**:
+    - WSI-kohtainen luokittelutarkkuus **AUCPR = 93.7 %**
 
 ![image](https://github.com/Keski-Suomen-AI-Hub-II/digital-pathology-CRC/assets/64031196/eb8313b8-8c77-48c1-96be-d9171567ca01)
 
@@ -59,27 +52,19 @@ Molecular profiling is a central part of cancer diagnostics. Important molecular
 
 It is clinically really important to know the MSI status of a tumor, but the MSI screening takes material and labour costs, which is the reason why it is sometimes left unexamined. This library has four different models for predicting the dMMR of a digitized H&E-stained CRC specimen. Models are trained with Finnish CRC data and validated both internally and externally.
 
-## Convolutional neural network models
+## Model
 
-All models are based on MobileNetV3-architecture, which is pre-trained with the ImageNet-image library. Models have one branch (TUM5x, TUM20x, OTHER5x) and two branches (TUM5x-TUM20x). The tumor areas are detected by a tumor-stroma-model developed in AI Hub I-project. The tumor mask is applied in magnification of 20x.
+The model consists of CNN and XGBoost layers, with the architecture illustrated in the figure below. The CNN branches are based on the MobileNetV3 architecture, which has been pre-trained on the ImageNet. The Models are trained using image regions containing tumor cells. The identification of tumor regions is carried out using the tumor-stroma model (MMR/models/TSR_model.pt) developed during the AI Hub I project. The tumor cell mask is generated from a 20x magnification image.
 
-- **TUM5x.pt**:
-    - tile-level classification accuracy 82.2 %
-    - WSI-level accuracy **AUC = 93.4 %**
-      
-- **TUM20x.pt**:
-    - tile-level classification accuracy 78.6 %
-    - WSI-level accuracy **AUC = 92.0 %**
-      
-- **OTHER5x.pt**:
-    - tile-level classification accuracy -
-    - WSI-level accuracy **AUC = 83.0 %**
-       
+<img width="1500" alt="graphicalabstract" src="https://github.com/user-attachments/assets/44e45f67-f87f-460e-bc63-e0affd74fd40" />
 
-- **Multi-scale.pt**:
-    - WSI-level accuracy **AUC = 93.0 %**
+- **TUM5x.pt**
+- **TUM20x.pt**
 
-![image](https://github.com/Keski-Suomen-AI-Hub-II/digital-pathology-CRC/assets/64031196/eb8313b8-8c77-48c1-96be-d9171567ca01)
+- **Multi-scale**:
+    - WSI-level accuracy **AUCPR = 93.7 %**
+
+![image](https://github.com/Keski-Suomen-AI-Hub-II/digital-pathology-CRC/assets/64031196/eb8313b8-8c77-48c1-96be-d9171567ca01)     
 
 Classes:
 
