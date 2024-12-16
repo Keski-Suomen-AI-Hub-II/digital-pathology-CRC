@@ -25,9 +25,6 @@ Malli koostuu sekä CNN- että XGBoost-kerroksista, arkkitehtuuri on esitetty al
 - **Multi-scale**:
     - WSI-kohtainen luokittelutarkkuus **AUCPR = 93.7 %**
 
-![image](https://github.com/Keski-Suomen-AI-Hub-II/digital-pathology-CRC/assets/64031196/eb8313b8-8c77-48c1-96be-d9171567ca01)
-
-
 Luokat:
 
 - **0**: dMMR
@@ -63,8 +60,6 @@ The model consists of CNN and XGBoost layers, with the architecture illustrated 
 
 - **Multi-scale**:
     - WSI-level accuracy **AUCPR = 93.7 %**
-
-![image](https://github.com/Keski-Suomen-AI-Hub-II/digital-pathology-CRC/assets/64031196/eb8313b8-8c77-48c1-96be-d9171567ca01)     
 
 Classes:
 
