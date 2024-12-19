@@ -17,8 +17,7 @@ def MMRfeatures(msis, msss, wsiroot, tileroot,rroot, modelTUM, froot):
     for i in range(len(imgs)):
         
         start_time = time.monotonic()
-        class_name = "dMMR_" if imgs[i] in msis
-        class_name = "pMMR_" if imgs[i] in msss       
+        class_name = "dMMR_" if imgs[i] in msis else "pMMR_" if imgs[i] in msss else "unknown"
         wsi = wsirootroot+imgs[i]
         slide = openslide.OpenSlide(wsi)
         n, m = slide.level_dimensions[0][1], slide.level_dimensions[0][0]
