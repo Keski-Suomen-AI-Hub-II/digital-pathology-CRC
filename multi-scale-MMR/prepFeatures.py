@@ -12,6 +12,7 @@ rroot = main root where to save masks, 5x and 20x probs (as numpy-files)
 (rroot should include folders: "masks", "5x" and "20x)
 modelTUM = CNN model (.pt) which predicts tumor areas from 20x tiles
 froot = dir where to save feature-arrays
+"""
 
 def MMRfeatures(msis, msss, wsiroot, tileroot,rroot, modelTUM, froot):
     
