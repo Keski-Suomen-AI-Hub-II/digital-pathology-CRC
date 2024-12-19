@@ -2,7 +2,9 @@
 
 ## Sisältö / In this repository:
 
-- ***MMR/***: ladattavat konvoluutioneuroverkkomallit ja python-tiedostot WSI-kuvien esikäsittelyä ja dMMR:n ennustamista varten / CNN-models for downloading and python-files for preprocessing of the WSI-files and dMMR prediction.
+- ***/models/***: ladattavat konvoluutioneuroverkko- ja XGBoost-mallit dMMR:n ennustamista varten / CNN and XGBoost models for dMMR prediction.
+- ***prepFEATURES.py***: Python-skripti piirteiden laskemiseen multi-scale-mallia varten / Python-script to prepare the probability features for the multi-scale model
+- ***predMMR.py***: Python-skripti dMMR:n ennustamiseen multi-scale -mallilla / Python-script to make the dMMR prediction with multi-scale model
 - ***readme.md***: ohjeet ja taustatiedot / instructions and background, ***english version follows the finnish one***
 
 ---
