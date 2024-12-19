@@ -2,6 +2,12 @@
 # coding: utf-8
 
 """
+MMRfeatures-function:
+
+- tiles 20x tiles
+- creates tumor mask
+- saves features calculated from 5x and 20x probabilities
+
 IN:
 msis = python list of WSI names with MSI/dMMR
 msss = python list of WSI names with MSS/pMMR
@@ -9,7 +15,7 @@ wsiroot = dir where all WSIs are
 tileroot = dir where 20x patches are saved for tumor masking
 maskroot = dir where tumor masks will be saved
 rroot = main root where to save masks, 5x and 20x probs (as numpy-files)
-(rroot should include folders: "masks", "5x" and "20x)
+(rroot should include folders: "masks", "5x" and "20x")
 modelTUM = CNN model (.pt) which predicts tumor areas from 20x tiles
 froot = dir where to save feature-arrays
 """
