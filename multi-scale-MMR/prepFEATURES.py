@@ -1,4 +1,6 @@
-```python
+#!/usr/bin/env python
+# coding: utf-8
+
 """
 IN:
 msis = python list of WSI names with MSI/dMMR
