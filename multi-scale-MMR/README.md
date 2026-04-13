@@ -34,8 +34,11 @@ The models have been trained with tumor or non-tumorous regions, using foundatio
 - **0**: pMMR
 - **1**: dMMR
 
-### Reference:
+### Cite:
 
+If you use this work, please cite:
+
+```bibtex
 @article{petainen2026dmmr,
 title={dMMR prediction from colorectal cancer histopathology: Leveraging non-tumor and low-magnification regions}, 
 author={Pet{\"a}inen, Liisa and V{\"a}yrynen, Juha P and B{\"o}hm, Jan and Ruusuvuori, Pekka and Ahtiainen, Maarit and Elomaa, Hanna and Karjalainen, Henna and Kastinen, Meeri and Tapiainen, Vilja V and {\"A}ij{\"a}l{\"a}, Ville K and others},
@@ -45,5 +48,5 @@ year={2026},
 publisher={Elsevier}
 }
 
-[dMMR prediction from colorectal cancer histopathology: Leveraging non-tumor and low-magnification regions](https://www.sciencedirect.com/science/article/pii/S0169260726000854)
+[Paper]([https://www.sciencedirect.com/science/article/pii/S0169260726000854](https://doi.org/10.1016/j.cmpb.2026.109317))
 
