@@ -1,1 +1,1 @@
-### CNN-models for tumor detection and MMR-prediction
+### Models for MMR-prediction from tumorous and non-tumorous regions.
