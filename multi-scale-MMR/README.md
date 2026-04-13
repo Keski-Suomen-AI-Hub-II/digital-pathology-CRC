@@ -34,7 +34,7 @@ The models have been trained with tumor or non-tumorous regions, using foundatio
 - **0**: pMMR
 - **1**: dMMR
 
-### Cite:
+### Citation:
 
 If you use this work, please cite:
 
@@ -49,4 +49,3 @@ publisher={Elsevier}
 }
 
 [Paper](https://doi.org/10.1016/j.cmpb.2026.109317)
-
