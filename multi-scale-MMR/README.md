@@ -48,5 +48,5 @@ year={2026},
 publisher={Elsevier}
 }
 
-[Paper]([https://www.sciencedirect.com/science/article/pii/S0169260726000854](https://doi.org/10.1016/j.cmpb.2026.109317))
+[Paper](https://doi.org/10.1016/j.cmpb.2026.109317)
 
