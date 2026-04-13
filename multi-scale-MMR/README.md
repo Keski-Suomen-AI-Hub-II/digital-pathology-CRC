@@ -1,49 +1,11 @@
-# Deep learning models for dMMR/MSI prediction
+# dMMR prediction from colorectal cancer histopathology: models for tumor (5x, 20x) and non-tumor (5x) regions
 
-## Sisältö / In this repository:
+## In this repository:
 
-- ***/models/***: ladattavat konvoluutioneuroverkko- ja XGBoost-mallit dMMR:n ennustamista varten / CNN and XGBoost models for dMMR prediction.
+- ***/models/***: Models for dMMR prediction from tumorous 5x and 20x reagions (single magnification and combined), and from non-tumorous regions (5x).
 - ***prepFEATURES.py***: Python-skripti piirteiden laskemiseen multi-scale-mallia varten / Python-script to prepare the probability features for the multi-scale model
 - ***predMMR.py***: Python-skripti dMMR:n ennustamiseen multi-scale -mallilla / Python-script to make the dMMR prediction with multi-scale model
-- ***readme.md***: ohjeet ja taustatiedot / instructions and background, ***english version follows the finnish one***
-
----
-
-## dMMR / MSI
-
-Molekyylitason profilointi on keskeinen osa useiden syöpätyyppien, kuten myös suolistosyövän (CRC) diagnostiikkaa.  tapauksissa. Yksi tärkeä geneettinen ominaisuus, joka CRC potilaiden kohdalla selvitetään, on DNA:n korjausmekanismin toimivuus (DNA mismatch repair, MMR). MMR-mekanismin viallisuus (MMR-deficient, dMMR) johtaa lyhyiden ei-koodaavien DNA-jaksojen eli mikrosatelliittijaksojen epästabiiliuteen (microsatellite unstable, MSI).  Syöpien, joilla todetaan MSI, on havaittu olevan muita immunogeenisempia ja omaavan hyvän vasteen immunologisille syöpälääkkeille, ja MSI-syövät eivät puolestaan välttämättä hyödy muille syöville kohdennetuista fluorourasiiliin pohjautuvista sytostaattihoidoista. CRC potilaiden kohdalla MSI on tärkeä selvittää myös sen vuoksi, että se voi olla merkki Lynchin oireyhtymästä (LS), joka on yleisin perinnöllinen CRC-tyyppi.
-
-Vaikka MSI:n selvittäminen on potilaan hoidon kannalta kiistattoman tärkeää, kustannussyistä se voi jäädä selvittämättä, sillä perinteisillä menetelmillä se vaatii niin henkilö- kuin materiaaliresursseja. Tästä kirjastosta löytyy neljä erilaista mallia dMMR:n ennustamiseen suolistosyövän histopatologisista kuvista. Mallit on opetettu, validoitu ja testattu käyttäen "Suolistyöpä Keski-Suomessa 2000-2015" H&E värjättyjä histopatologisia WSI-kuvia sekä Lynch-oireyhtymä potilailta kerätyistä näytteistä skannattuja H&E värjättyjä WSI-kuvia.
-
-## Malli
-
-Malli koostuu sekä CNN- että XGBoost-kerroksista, arkkitehtuuri on esitetty alla olevasssa kuvassa. CNN-haarat perustuvat MobileNetV3-arkkitehtuuriin, joka on esiopetettu ImageNet-kuvakirjastolla ja mallit on opetettu käyttäen kuvien alueita, joissa esiintyy kasvainsolukkoa. Kasvainalueiden tunnistamiseen on käytetty AI Hub I-hankkeessa kehitettyä kasvain-strooma-mallia (MMR/models/TSR_model.pt). Kasvainsolukon maski tehdään 20x suurennoksesta.
-
-<img width="1500" alt="graphicalabstract" src="https://github.com/user-attachments/assets/44e45f67-f87f-460e-bc63-e0affd74fd40" />
-
-- **TUM5x.pt**
-- **TUM20x.pt**
-
-- **Multi-scale**:
-    - WSI-kohtainen luokittelutarkkuus **AUCPR = 93.7 %**
-
-Luokat:
-
-- **0**: dMMR
-- **1**: pMMR
-
-### Syötekuvat
-
-- syötekoko kaikille malleille 224 x 224 px<sup>2</sup>
-- kasvainkuvatiilet on pilkottu siten, että 3/4 pilkottavasta kohdasta on kasvainsolukoksi tunnistetulla alueella 5x suurennoksessa
-    - 5x- ja 20x-kuvatiilien keskipiste on sama (ks. kuva x)
-    - tile5x20x.py
-- värinormalisointiin on käytetty Macenko-normalisointia (viite)
-- kuvien normalisointiin käytettävät keskiarvot = [0.485, 0.456, 0.406] ja keskihajonnat = [0.229, 0.224, 0.225]
-
-![image](https://github.com/Keski-Suomen-AI-Hub-II/digital-pathology-CRC/assets/64031196/cae1901e-e4ac-41a3-b9b5-ed439bc7faa9)
-
----
+- ***readme.md***: instructions and background
 
 ## dMMR/MSI
 
