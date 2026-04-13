@@ -45,5 +45,5 @@ The models have been trained with tumor or non-tumorous regions, using foundatio
   publisher={Elsevier}
 }
 
-[link text](https://www.sciencedirect.com/science/article/pii/S0169260726000854)
+[dMMR prediction from colorectal cancer histopathology: Leveraging non-tumor and low-magnification regions](https://www.sciencedirect.com/science/article/pii/S0169260726000854)
 
